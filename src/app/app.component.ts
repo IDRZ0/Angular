@@ -68,5 +68,14 @@ export class AppComponent {
 
     const { phone: ci } = per3;
     console.log('name=', ci);
+
+    //ejercicios 05/08/21
+    const json1 = { 1: 'a', 2: 'a', 3: 'a', 4: 'da', 5: 'a', 6: 'a' };
+    const arr1 = Object.keys(json1).map(n => parseInt(n)).filter(n => n % 2 === 0).reduce((acc, value) => acc + value);
+    console.log(arr1);
+
+    const arr2 = [1, 2, 3, 4, 5, 6];
+    const res2 = arr2.filter(n => n % 2 === 1).join('');
+    console.log(res2);
   }
 }
