@@ -80,7 +80,11 @@ export class AppComponent {
     console.log(res2);
   }
 
-  printData(event:any){
+  printData(event: any) {
     console.log("Ignacio comp: ", event);
+  }
+
+  printNames(event: any) {
+    console.log("TEST 2: ", event);
   }
 }
