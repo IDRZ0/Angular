@@ -79,4 +79,8 @@ export class AppComponent {
     const res2 = arr2.filter(n => n % 2 === 1).join('');
     console.log(res2);
   }
+
+  printData(event:any){
+    console.log("Ignacio comp: ", event);
+  }
 }

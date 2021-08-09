@@ -9,8 +9,16 @@ export class Test1Component {
 
   @Input('status') statusTest: string = "work";
 
+  @Output('onSendData') sendData = new EventEmitter();
+
   constructor() { }
 
-  
+  onClickTest(event: any) {
+    console.log('EVENT CLICK: ', event);
+    this.sendData.emit({
+      name: 'Ignacio',
+      status: 'working'
+    });
+  }
 
 }
