@@ -1,8 +1,11 @@
 <div style="border: 5px blue solid;">
     <p>test3 works!</p>
-    <p>Var: {{name}}</p>
-    <p>Var: {{lastName}}</p>
+    <p>Name: {{name}}</p>
+    <p>LastName: {{lastName}}</p>
     <input type="text" [(ngModel)]="name">
     <input type="text" [(ngModel)]="lastName">
     <button (click)="test0($event)">Concat</button>
+    <br>
+    <p>Var: {{myvar}}</p>
+    <input type="text" [(ngModel)]="myvar">
 </div>
