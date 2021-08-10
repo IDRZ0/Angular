@@ -1,4 +1,8 @@
 <div style="border: 5px green solid;">
     <p>test2 works!</p>
-    <button (click)="onClickSend()">Show Data</button>
+    <p>Var: {{myvar1}}</p>
+    <p>Var: {{myvar2}}</p>
+    <input type="number" [(ngModel)]="myvar1">
+    <input type="number" [(ngModel)]="myvar2">
+    <button (click)="test0($event)" (blur)="test1($event)" (dblclick)="test2($event)">Functions</button>
 </div>
