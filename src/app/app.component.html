@@ -1,11 +1,12 @@
 <ignacio [status]="myStatus" (onSendData)="printData($event)">
 </ignacio>
 <test2 name="Ignacio" lastName="del Rio" (sendData)="printNames($event)">
+    <p>Mi contenido de ng content</p>
 </test2>
 <div>
     <input type="text" [(ngModel)]="varCh">
     <button (click)="varBool = !varBool">Show Test3</button>
-    <div *ngIf="varBool">
+    <div *ngIf="varBool else myLocalVar">
         <test3 [myvar]="varCh"></test3>
     </div>
 </div>
@@ -27,4 +28,33 @@
         <li *ngSwitchCase="'green'">green</li>
         <li *ngSwitchDefault>Black</li>
     </ul>
+</div>
+<ng-template #myLocalVar>
+    <p>Hola</p>
+</ng-template>
+<div [style.border]="'5px solid ' + color">
+    <input type="text" [(ngModel)]="color">
+    <button (click)="varBool = !varBool">Show Test3</button>
+    <br>
+    <ng-container *ngIf="varBool else myLocalVar">
+        NG Container
+    </ng-container>
+</div>
+<div [ngStyle]="{'border': '5px solid ' + color}">
+    <input type="text" [(ngModel)]="color">
+    <button (click)="varBool = !varBool">Show Test3</button>
+    <br>
+    <ng-container *ngIf="varBool else myLocalVar">
+        NG Container
+    </ng-container>
+</div>
+<div [class.est1]="color === 'hola'">
+    my div with class
+</div>
+<div [ngClass]="{
+    'est1': color === 'hola0',
+    'est2': color === 'hola1',
+    'est3': color === 'hola2'
+}">
+    my div with ngclass
 </div>
