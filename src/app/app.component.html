@@ -20,6 +20,19 @@
         </li>
     </ul>
 </div>
+<div style="border: 5px gray solid;">
+    <ul>
+        <li *ngFor="let item of [1,2,3,4]">
+            <div [ngClass]="{
+                'est4': item%2 === 1,
+                'est5': item%2 === 0
+            }">
+                <ignacio [styleVar]="item" (onSendData)="printData($event)">
+                </ignacio>
+            </div>
+        </li>
+    </ul>
+</div>
 <div style="border: 5px yellow solid;">
     <input type="text" [(ngModel)]="color">
     <ul [ngSwitch]="color">

@@ -12,6 +12,7 @@ export class Test1Component {
   people:Array<any> = [];
 
   @Input('status') statusTest: string = "work";
+  @Input('styleVar') style: number = 0;
 
   @Output('onSendData') sendData = new EventEmitter();
 
