@@ -9,3 +9,22 @@
         <test3 [myvar]="varCh"></test3>
     </div>
 </div>
+<div [hidden]="!varBool">
+    <test3 [myvar]="varCh"></test3>
+</div>
+<div style="border: 5px blueviolet solid;">
+    <ul>
+        <li *ngFor="let item of [1,2]; let i = index">
+            {{item}} -> {{i}}
+        </li>
+    </ul>
+</div>
+<div style="border: 5px yellow solid;">
+    <input type="text" [(ngModel)]="color">
+    <ul [ngSwitch]="color">
+        <li *ngSwitchCase="'red'">red</li>
+        <li *ngSwitchCase="'yellow'">yellow</li>
+        <li *ngSwitchCase="'green'">green</li>
+        <li *ngSwitchDefault>Black</li>
+    </ul>
+</div>
