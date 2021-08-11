@@ -7,6 +7,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class Test1Component {
 
+  name: string = "";
+  lastName: string = "";
+  people:Array<any> = [];
+
   @Input('status') statusTest: string = "work";
 
   @Output('onSendData') sendData = new EventEmitter();
@@ -18,6 +22,13 @@ export class Test1Component {
     this.sendData.emit({
       name: 'Ignacio',
       status: 'working'
+    });
+  }
+
+  addPerson(event:any) {
+    this.people.push({
+      name: this.name,
+      lastName: this.lastName
     });
   }
 
