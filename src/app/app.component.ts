@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { of } from 'rxjs'
+import { map, filter } from 'rxjs/operators'
 
 @Component({
   selector: 'app-root',
@@ -11,8 +13,25 @@ export class AppComponent {
   varCh = "change";
   varBool = true;
   color: string = "";
+  tiktok = of([1, 2, 3, 4, 5]);
 
   constructor() {
+    this.tiktok.subscribe((v) => {
+      console.log("Video: ", v);
+    });
+
+    this.tiktok.pipe(
+      map(s => s.join('-'))
+    ).subscribe((v) => {
+      console.log("Video: ", v);
+    });
+
+    this.tiktok.pipe(
+      filter((v: any) => v[0] % 0 === 1)
+    ).subscribe((v) => {
+      console.log("Video: ", v);
+    });
+
     const testMap = [1, 2, 3, 4, 5, 6].map(item => item * 2);
     console.log(testMap);
 
