@@ -1,6 +1,10 @@
 <button (click)="addVideo()">addVideo</button>
 <button (click)="unsubA()">unsubA</button>
-<p directive1 color='red' (outputTest)='test($event)'>Directiva de atributo</p>
+<p directive1 (color)='dirTest' (outputTest)='test($event)'>Directiva de atributo</p>
+<input type="checkbox" [(ngModel)]="switch">
+<div *ngIfIgnacio="switch" (test)="test($event)">
+    Structural directive
+</div>
 <!--
 <ignacio [status]="myStatus" (onSendData)="printData($event)">
 </ignacio>

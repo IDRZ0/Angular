@@ -19,6 +19,10 @@ export class AppComponent {
   ticktok1 = new BehaviorSubject(this.video);
   personASub: Subscription = new Subscription();
 
+  dirTest: string = "white";
+
+  switch: boolean = true;
+
   constructor() {
     this.tiktok.subscribe((v) => {
       console.log("Video: ", v);

@@ -14,7 +14,7 @@ export class Directive1Directive {
   }
 
   @HostListener('mouseleave') onMouseLeave() {
-    this.element.nativeElement.style.backgroundColor = 'green';
+    this.element.nativeElement.style.backgroundColor = this.color;
   }
 
   @HostListener('mouseenter') onMouseEnter() {
