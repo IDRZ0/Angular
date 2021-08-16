@@ -133,4 +133,8 @@ export class AppComponent {
     this.personASub.unsubscribe();
   }
 
+  test(event: any) {
+    console.log('Output: ', event);
+  }
+
 }
