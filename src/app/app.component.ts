@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { BehaviorSubject, of, Subscription } from 'rxjs'
 import { map, filter } from 'rxjs/operators'
 
@@ -22,6 +22,15 @@ export class AppComponent {
   dirTest: string = "white";
 
   switch: boolean = true;
+
+  @ViewChild('myDiv')
+  myDiv!: ElementRef;
+
+  @ViewChild('myDiv1')
+  myDiv1!: ElementRef;
+
+  @ViewChild('ignacio')
+  ignacio!: any;
 
   constructor() {
     this.tiktok.subscribe((v) => {
@@ -139,6 +148,12 @@ export class AppComponent {
 
   test(event: any) {
     console.log('Output: ', event);
+  }
+
+  showChild() {
+    console.log(this.myDiv, this.myDiv1);
+    this.myDiv1.nativeElement.value = "ignacio";
+    this.ignacio.onClickTest();
   }
 
 }
