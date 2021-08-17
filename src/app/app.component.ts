@@ -23,14 +23,13 @@ export class AppComponent {
 
   switch: boolean = true;
 
-  @ViewChild('myDiv')
-  myDiv!: ElementRef;
+  @ViewChild('myDiv') myDiv: ElementRef;
 
-  @ViewChild('myDiv1')
-  myDiv1!: ElementRef;
+  @ViewChild('myDiv1') myDiv1: ElementRef;
 
-  @ViewChild('ignacio')
-  ignacio!: any;
+  @ViewChild('myDiv2') myDiv2: ElementRef;
+
+  @ViewChild('ignacio') ignacio: any;
 
   constructor() {
     this.tiktok.subscribe((v) => {
@@ -154,6 +153,10 @@ export class AppComponent {
     console.log(this.myDiv, this.myDiv1);
     this.myDiv1.nativeElement.value = "ignacio";
     this.ignacio.onClickTest();
+  }
+
+  changeBorder() {
+    this.myDiv2.nativeElement.style.border = "5px solid green";
   }
 
 }

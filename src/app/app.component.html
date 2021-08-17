@@ -15,6 +15,11 @@
 <input type="text" #myDiv1 value="efesio">
 <ignacio #ignacio></ignacio>
 <button (click)="showChild()">showChild</button>
+<br>
+<div #myDiv2 style="border: 3px solid blue;">
+    MyDiv2
+</div>
+<button (click)="changeBorder()">ChangeBorder</button>
 <!--
 <ignacio [status]="myStatus" (onSendData)="printData($event)">
 </ignacio>
