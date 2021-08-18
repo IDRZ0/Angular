@@ -8,6 +8,9 @@ import { Test2Component } from './test2/test2.component';
 import { Test3Component } from './test3/test3.component';
 import { Directive1Directive } from './directive1.directive';
 import { Directive2Directive } from './directive2.directive';
+import { HomeModule } from './pages/home/home.module';
+import { BuyModule } from './pages/buy/buy.module';
+import { AdminModule } from './pages/admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { Directive2Directive } from './directive2.directive';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HomeModule,
+    BuyModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]

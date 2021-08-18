@@ -14,49 +14,49 @@ export class AppComponent {
   // varBool = true;
   // color: string = "";
 
-  video: number = 1;
-  tiktok = of([1, 2, 3, 4, 5]);
-  ticktok1 = new BehaviorSubject(this.video);
-  personASub: Subscription = new Subscription();
+  // video: number = 1;
+  // tiktok = of([1, 2, 3, 4, 5]);
+  // ticktok1 = new BehaviorSubject(this.video);
+  // personASub: Subscription = new Subscription();
 
-  dirTest: string = "white";
+  // dirTest: string = "white";
 
-  switch: boolean = true;
+  // switch: boolean = true;
 
-  @ViewChild('myDiv') myDiv: ElementRef;
+  // @ViewChild('myDiv') myDiv: ElementRef;
 
-  @ViewChild('myDiv1') myDiv1: ElementRef;
+  // @ViewChild('myDiv1') myDiv1: ElementRef;
 
-  @ViewChild('myDiv2') myDiv2: ElementRef;
+  // @ViewChild('myDiv2') myDiv2: ElementRef;
 
-  @ViewChild('ignacio') ignacio: any;
+  // @ViewChild('ignacio') ignacio: any;
 
   constructor() {
-    this.tiktok.subscribe((v) => {
-      console.log("Video: ", v);
-    });
+    // this.tiktok.subscribe((v) => {
+    //   console.log("Video: ", v);
+    // });
 
-    this.tiktok.pipe(
-      map(s => s.join('-'))
-    ).subscribe((v) => {
-      console.log("Video: ", v);
-    });
+    // this.tiktok.pipe(
+    //   map(s => s.join('-'))
+    // ).subscribe((v) => {
+    //   console.log("Video: ", v);
+    // });
 
-    this.tiktok.pipe(
-      filter((v: any) => v[0] % 0 === 1)
-    ).subscribe((v) => {
-      console.log("Video: ", v);
-    });
+    // this.tiktok.pipe(
+    //   filter((v: any) => v[0] % 0 === 1)
+    // ).subscribe((v) => {
+    //   console.log("Video: ", v);
+    // });
 
-    this.ticktok1.pipe(
-      filter(s => s % 2 === 0)
-    ).subscribe((v) => {
-      console.log("Person B Video: ", v);
-    });
+    // this.ticktok1.pipe(
+    //   filter(s => s % 2 === 0)
+    // ).subscribe((v) => {
+    //   console.log("Person B Video: ", v);
+    // });
 
-    this.personASub = this.ticktok1.subscribe((v) => {
-      console.log("Person A Video: ", v);
-    });
+    // this.personASub = this.ticktok1.subscribe((v) => {
+    //   console.log("Person A Video: ", v);
+    // });
 
     // const testMap = [1, 2, 3, 4, 5, 6].map(item => item * 2);
     // console.log(testMap);
@@ -136,27 +136,27 @@ export class AppComponent {
   //   console.log("TEST 2: ", event);
   // }
 
-  addVideo() {
-    this.video++;
-    this.ticktok1.next(this.video);
-  }
+  // addVideo() {
+  //   this.video++;
+  //   this.ticktok1.next(this.video);
+  // }
 
-  unsubA() {
-    this.personASub.unsubscribe();
-  }
+  // unsubA() {
+  //   this.personASub.unsubscribe();
+  // }
 
-  test(event: any) {
-    console.log('Output: ', event);
-  }
+  // test(event: any) {
+  //   console.log('Output: ', event);
+  // }
 
-  showChild() {
-    console.log(this.myDiv, this.myDiv1);
-    this.myDiv1.nativeElement.value = "ignacio";
-    this.ignacio.onClickTest();
-  }
+  // showChild() {
+  //   console.log(this.myDiv, this.myDiv1);
+  //   this.myDiv1.nativeElement.value = "ignacio";
+  //   this.ignacio.onClickTest();
+  // }
 
-  changeBorder() {
-    this.myDiv2.nativeElement.style.border = "5px solid green";
-  }
+  // changeBorder() {
+  //   this.myDiv2.nativeElement.style.border = "5px solid green";
+  // }
 
 }
