@@ -11,6 +11,7 @@ import { Directive2Directive } from './directive2.directive';
 import { HomeModule } from './pages/home/home.module';
 import { BuyModule } from './pages/buy/buy.module';
 import { AdminModule } from './pages/admin/admin.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AdminModule } from './pages/admin/admin.module';
     FormsModule,
     HomeModule,
     BuyModule,
-    AdminModule
+    AdminModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
