@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
       <button (click)="testParams()">Test</button>
       <p>{{test1 ?? test2}}</p>
       <p>{{test1 || test2}}</p>
+      <p>{{ 10 | exponent }}</p>
   `,
   styles: [
     `
