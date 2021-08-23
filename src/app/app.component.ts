@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, DoCheck, ElementRef, ViewChild } from '@angular/core';
 import { BehaviorSubject, of, Subscription } from 'rxjs'
 import { map, filter } from 'rxjs/operators'
 
@@ -7,7 +7,7 @@ import { map, filter } from 'rxjs/operators'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements DoCheck {
 
   fakeData = [
     { name: "juan", age: 16, date: "2019-09-07T15:50+00Z", disease: true, vaccineType: "A", vaccined: 0, doses: 0 },
@@ -27,12 +27,35 @@ export class AppComponent {
   noVacArr = this.fakeData.filter(per => per.vaccined === 0);
   noVacSize = this.noVacArr.length;
 
-  constructor() {
+  everybody: boolean = false;
 
+  constructor() {
+    this.makeArrays();
+  }
+
+  ngDoCheck() {
+    this.makeArrays();
+    this.checkVac();
+  }
+
+  makeArrays() {
+    this.vacArr = this.fakeData.filter(per => per.vaccined === 1);
+    this.vacSize = this.vacArr.length;
+    this.noVacArr = this.fakeData.filter(per => per.vaccined === 0);
+    this.noVacSize = this.noVacArr.length;
+  }
+
+  checkVac() {
+    if (this.vacSize == this.fakeData.length) {
+      this.everybody = true;
+    }
   }
 
   vaccinate(event: any) {
-    console.log("f", event);
+    const aux = this.fakeData.find(per => per.name === event);
+    const i = this.fakeData.findIndex(per => per === aux);
+    this.fakeData[i].doses = this.fakeData[i].doses + 1;
+    this.fakeData[i].vaccined = 1;
   }
 
 }

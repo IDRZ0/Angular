@@ -7,20 +7,21 @@ import { Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angula
 })
 export class FirstTestComponent implements OnInit {
 
-  @Input() name: string = "";
-  @Input() age: number = 0;
-  @Input() date: string = "";
-  @Input() disease: boolean = false;
-  @Input() vaccineType: string = "";
-  @Input() vaccined: number = 0;
-  @Input() doses: number = 0;
+  @Input() name: string;
+  @Input() age: number;
+  @Input() date: string;
+  @Input() disease: boolean;
+  @Input() vaccineType: string;
+  @Input() vaccined: number;
+  @Input() doses: number;
   @Output() vaccinate = new EventEmitter();
 
-  color: string = (this.vaccined == 0) ? "orange" : "green";
+  color: string;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.color = (this.vaccined == 0) ? "orange" : "yellowgreen";
   }
 
   vaccinateM() {
