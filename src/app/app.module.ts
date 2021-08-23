@@ -12,6 +12,8 @@ import { HomeModule } from './pages/home/home.module';
 import { BuyModule } from './pages/buy/buy.module';
 import { AdminModule } from './pages/admin/admin.module';
 import { CoreModule } from './core/core.module';
+import { ClientModule } from './client/client.module';
+import { ProductModule } from './product/product.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CoreModule } from './core/core.module';
     HomeModule,
     BuyModule,
     AdminModule,
-    CoreModule
+    CoreModule,
+    ClientModule,
+    ProductModule
   ],
   providers: [],
   bootstrap: [AppComponent]
