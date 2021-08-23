@@ -1,0 +1,12 @@
+<div style="background-color: {{color}}; border: 5px solid black;">
+    Name: {{name | uppercase}} <br>
+    Age: {{age}} <br>
+    Date: {{date }} <br>
+    Disease: {{disease}} <br>
+    VaccineType: {{vaccineType}} <br>
+    Vaccined: {{vaccined}} <br>
+    Doses: {{doses}} <br>
+    <div *ngIf="vaccined == 0">
+        <button (click)="vaccinateM()">Vaccinate</button>
+    </div>
+</div>
