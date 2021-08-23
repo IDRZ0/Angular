@@ -7,6 +7,6 @@
     Vaccined: {{vaccined}} <br>
     Doses: {{doses}} <br>
     <div *ngIf="vaccined == 0">
-        <button [disabled]="disease || age < 18" (click)="vaccinateM()">Vaccinate</button>
+        <button [disabled]="age < 18" (click)="vaccinateM()">Vaccinate</button>
     </div>
 </div>

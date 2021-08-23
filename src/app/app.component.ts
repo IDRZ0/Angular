@@ -55,7 +55,15 @@ export class AppComponent implements DoCheck {
     const aux = this.fakeData.find(per => per.name === event);
     const i = this.fakeData.findIndex(per => per === aux);
     this.fakeData[i].doses = this.fakeData[i].doses + 1;
-    this.fakeData[i].vaccined = 1;
+    if (this.fakeData[i].vaccineType === "A") {
+      this.fakeData[i].vaccined = 1;
+    } else if (this.fakeData[i].vaccineType === "B" && this.fakeData[i].doses === 2) {
+      this.fakeData[i].vaccined = 1;
+    } else if (this.fakeData[i].vaccineType === "C" && this.fakeData[i].doses === 3) {
+      this.fakeData[i].vaccined = 1;
+    } else {
+
+    }
   }
 
 }
