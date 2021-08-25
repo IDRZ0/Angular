@@ -9,6 +9,8 @@ import { map, filter } from 'rxjs/operators'
 })
 export class AppComponent {
 
+  data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
   constructor() {
     console.log(this.pure(1, 2));
     console.log(this.impure(1, 2));
