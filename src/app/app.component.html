@@ -1,3 +1,7 @@
 <p>{{ data | pure}}</p>
 <p>{{ data | impure}}</p>
 <button (click)="data.push(10)">Add</button>
+<button routerLink="view1" routerLinkActive="active-router">view1</button>
+<button routerLink="view2">view2</button>
+
+<router-outlet></router-outlet>
