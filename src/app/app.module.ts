@@ -49,7 +49,7 @@ const routes: Routes = [
         component: Admin1Component
       },
       {
-        path: 'admin2',
+        path: 'admin2/:id/f/:id2',
         component: Admin2Component
       },
     ]

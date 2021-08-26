@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin2',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Admin2Component implements OnInit {
 
-  constructor() { }
+  constructor(private router: ActivatedRoute) { }
 
   ngOnInit(): void {
+    // this.router.params.subscribe(p => {
+    //   console.log('PARAMS', p);
+    // });
+    console.log('Snapshot', this.router.snapshot.params);
   }
 
 }
