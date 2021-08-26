@@ -11,10 +11,16 @@ export class Admin2Component implements OnInit {
   constructor(private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // this.router.params.subscribe(p => {
-    //   console.log('PARAMS', p);
-    // });
-    console.log('Snapshot', this.router.snapshot.params);
+     this.router.params.subscribe(p => {
+       console.log('PARAMS', p);
+     });
+
+     this.router.queryParams.subscribe(q => {
+      console.log('Q-PARAMS', q);
+    });
+    
+    //console.log('Snapshot', this.router.snapshot.params);
+    //console.log('Snapshot Q', this.router.snapshot.queryParams);
   }
 
 }

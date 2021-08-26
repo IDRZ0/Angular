@@ -28,7 +28,7 @@ export class AppComponent {
   }
 
   goAdminTS() {
-    this.router.navigate(['admin/admin2', this.id, 'f', 33]);
+    this.router.navigate(['admin/admin2', this.id, 'f', 33], { queryParams: { lastName: 'del rio' } });
   }
 
 }
