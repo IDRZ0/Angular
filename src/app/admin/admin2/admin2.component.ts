@@ -20,6 +20,7 @@ export class Admin2Component implements OnInit {
     });
     
     //console.log('Snapshot', this.router.snapshot.params);
+    
     //console.log('Snapshot Q', this.router.snapshot.queryParams);
   }
 
