@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbButtonsModule, NgbToastModule } from "@ng-bootstrap/ng-bootstrap";
+import { MatSliderModule } from "@angular/material/slider";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 const routes: Routes = [
   {
@@ -19,7 +21,10 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
-    NgbModule,
+    NgbButtonsModule,
+    NgbToastModule,
+    MatSliderModule,
+    MatProgressSpinnerModule,
     RouterModule.forChild(routes)
   ]
 })
