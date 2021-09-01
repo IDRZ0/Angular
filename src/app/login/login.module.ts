@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbButtonsModule, NgbToastModule } from "@ng-bootstrap/ng-bootstrap";
 import { MatSliderModule } from "@angular/material/slider";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { Test1Service } from './services/test1.service';
 
 const routes: Routes = [
   {
@@ -26,6 +27,9 @@ const routes: Routes = [
     MatSliderModule,
     MatProgressSpinnerModule,
     RouterModule.forChild(routes)
+  ],
+  providers: [
+    Test1Service,
   ]
 })
 export class LoginModule { }

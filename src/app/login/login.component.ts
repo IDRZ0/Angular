@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SingletonService } from './services/singleton.service';
+import { Test1Service } from './services/test1.service';
 
 @Component({
   templateUrl: './login.component.html',
@@ -6,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private test1Service: Test1Service, private singleton: SingletonService) {
+    this.singleton.setMsg("locura");
+  }
 
   ngOnInit(): void {
+    console.log(this.test1Service.getItems());
   }
 
 }
