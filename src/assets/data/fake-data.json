@@ -1,0 +1,18 @@
+{
+    "publications": {
+        "p0001": {
+            "idUser": 1,
+            "description": "f",
+            "date": "01/01/2000",
+            "imageUrl": "http://firebase/efe.jpg",
+            "userPhotoUrl": "http://firebase/f.jpg"
+        },
+        "p0002": {
+            "idUser": 2,
+            "description": "f",
+            "date": "01/01/2000",
+            "imageUrl": "http://firebase/efe.jpg",
+            "userPhotoUrl": "http://firebase/f.jpg"
+        }
+    }
+}
