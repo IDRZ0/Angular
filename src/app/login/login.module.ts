@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login.component';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbButtonsModule, NgbToastModule } from "@ng-bootstrap/ng-bootstrap";
 import { MatSliderModule } from "@angular/material/slider";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
@@ -28,6 +28,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     NgbButtonsModule,
     NgbToastModule,
     MatSliderModule,

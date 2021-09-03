@@ -41,10 +41,23 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  public delete() {
-    this.publicationService.delete('p0001').subscribe(res => {
+  public patch() {
+    this.publicationService.patch('-MicUGkJvpuKIARdCNtb', {
+      "imageUrl": "http://firebase/efe1.jpg",
+      "userPhotoUrl": "http://firebase/f.jpg"
+    }).subscribe(res => {
       console.log('res', res);
     });
+  }
+
+  public delete() {
+    this.publicationService.delete('MicUGkJvpuKIARdCNtb').subscribe(res => {
+      console.log('res', res);
+    });
+  }
+
+  onSubmitTemplate(values:any){
+    console.log(values);
   }
 
 }
