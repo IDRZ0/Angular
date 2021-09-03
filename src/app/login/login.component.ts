@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { PublicationService } from './services/publication.service';
 import { SingletonService } from './services/singleton.service';
 import { Test1Service } from './services/test1.service';
@@ -9,9 +10,26 @@ import { Test1Service } from './services/test1.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private publicationService: PublicationService) { }
+  name = new FormControl('efe');
+  formReactive: FormGroup;
+
+  constructor(private publicationService: PublicationService, private formBuilder: FormBuilder) {
+    this.formReactive = this.formBuilder.group({
+      name: '',
+      lastName: ['',[Validators.required]],
+      date: '',
+    });
+  }
 
   ngOnInit(): void {
+    this.name.valueChanges.subscribe(res => {
+      console.log('name', res);
+    });
+
+    this.formReactive.valueChanges.subscribe(res => {
+      console.log('form', res);
+    });
+
     this.publicationService.getAll().subscribe(res => {
       console.log('res', res);
     });
@@ -56,8 +74,16 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSubmitTemplate(values:any){
+  onSubmitTemplate(values: any) {
     console.log(values);
+  }
+
+  onShow() {
+    console.log(this.name.value);
+  }
+
+  onShowAll(){
+    console.log('FFFF',this.formReactive.value);
   }
 
 }
