@@ -1,23 +1,14 @@
-<p>login works!</p>
-<button (click)="crear()">crear</button>
-<button (click)="update()">update</button>
-<button (click)="patch()">patch</button>
-<button (click)="delete()">delete</button>
-
-<p>Forms</p>
-<form #formTemplate="ngForm" (ngSubmit)="onSubmitTemplate(formTemplate)">
-    <input type="text" name="aa" ngModel>
-    <input type="text" name="bb" ngModel>
-    <input type="text" name="cc" ngModel>
-    <button type="submit">submit</button>
-</form>
-
-<input type="text" [formControl]="name">
-<button (click)="onShow()">show</button>
-
-<div [formGroup]="formReactive">
-    <input type="text" formControlName="name">
-    <input type="text" formControlName="lastName">
-    <input type="text" formControlName="date">
-    <button (click)="onShowAll()">show</button>
+<input type="text" required minlength="5" maxlength="20" [(ngModel)]="name" #nameLocal="ngModel">
+<div *ngIf="nameLocal.valid">
+    Valid
+</div>
+<div>{{nameLocal.errors | json}}</div>
+<div *ngIf="nameLocal.invalid && (nameLocal.touched || nameLocal.dirty)">
+    invalid
+    <div *ngIf="nameLocal.errors?.required">
+        required
+    </div>
+    <div *ngIf="nameLocal.errors?.minlength">
+        min
+    </div>
 </div>
