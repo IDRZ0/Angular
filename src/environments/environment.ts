@@ -4,9 +4,7 @@
 
 export const environment = {
   production: false,
-  app: {
-    apiBaseUrl: 'https://angular-course-facebook-default-rtdb.firebaseio.com'
-  }
+  apiBaseUrl: 'https://angular-course-facebook-default-rtdb.firebaseio.com'
 };
 
 /*

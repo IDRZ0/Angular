@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { PublicationService } from './services/publication.service';
 
 @Component({
   templateUrl: './login.component.html',
@@ -7,14 +8,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
 
-  name: string = "";
-
-  constructor() {
-
-  }
+  constructor() { }
 
   ngOnInit(): void {
-
+    console.log('IGNACIO DEL RIO');
   }
 
 }
