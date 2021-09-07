@@ -1,0 +1,25 @@
+<h3>VACCINATED</h3>
+<h3>TOTAL: {{vacSize}}</h3>
+<div *ngFor="let v of vaccinated" style="background-color: greenyellow;">
+    <p>NAME: {{v.name | uppercase}}</p>
+    <p>AGE: {{v.age}}</p>
+    <p>DATE: {{v.date | date}}</p>
+    <p>DISEASE: {{v.disease}}</p>
+    <p>VACCINETYPE: {{v.vaccineType}}</p>
+    <p>VACCINED: {{v.vaccined}}</p>
+    <p>DOSES: {{v.doses}}</p>
+</div>
+<br>
+<h3>NOT VACCINATED</h3>
+<h3>TOTAL: {{unvacSize}}</h3>
+<div *ngFor="let v of unvaccinated" style="background-color: red; margin: 10px;">
+    <p>NAME: {{v.name | uppercase}}</p>
+    <p>AGE: {{v.age}}</p>
+    <p>DATE: {{v.date | date}}</p>
+    <p>DISEASE: {{v.disease}}</p>
+    <p>VACCINETYPE: {{v.vaccineType}}</p>
+    <p>VACCINED: {{v.vaccined}}</p>
+    <p>DOSES: {{v.doses}}</p>
+    <button [disabled]="v.age < 18 || v.disease"
+    (click)="vaccine($event)">VACCINE</button>
+</div>

@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { Test2Service } from './test2/services/test2.service';
+import { Test2Component } from './test2/test2.component';
 
 const routes: Routes = [
   {
@@ -24,14 +26,16 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    Test2Component,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    Test2Service
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
