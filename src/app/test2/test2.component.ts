@@ -12,6 +12,7 @@ export class Test2Component implements OnInit {
   vacSize: number = 0;
   unvaccinated: any[] = [];
   unvacSize: number = 0;
+  everybody: boolean = (this.unvacSize === 0);
 
   constructor(private service: Test2Service) {
     this.service.getVaccinated().subscribe(v => {
@@ -38,8 +39,27 @@ export class Test2Component implements OnInit {
 
   }
 
-  vaccine(event: any) {
-    console.log(event);
+  vaccine(id: string) {
+    console.log(id);
+    var aux = this.unvaccinated[0];
+    for (var _i = 0; _i < this.unvacSize; _i++) {
+      if (this.unvaccinated[_i].id === id) {
+        aux = this.unvaccinated[_i];
+      }
+    }
+    console.log(aux);
+    var dose = aux.doses;
+    console.log(dose);
+    if (aux.vaccineType = "C" && aux.doses < 2) {
+      this.service.patchVaccine(id, { "doses": dose++ });
+    } else if (aux.vaccineType = "B" && aux.doses < 1) {
+      this.service.patchVaccine(id, { "doses": dose++ });
+    } else {
+      aux.doses++;
+      aux.vaccine = 1;
+      this.service.deleteUnvaccinated(id);
+      this.service.postVaccine(aux);
+    }
   }
 
 }

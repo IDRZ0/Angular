@@ -1,3 +1,5 @@
+<h3 *ngIf="everybody">Everybody vaccinated</h3>
+
 <h3>VACCINATED</h3>
 <h3>TOTAL: {{vacSize}}</h3>
 <div *ngFor="let v of vaccinated" style="background-color: greenyellow;">
@@ -20,6 +22,5 @@
     <p>VACCINETYPE: {{v.vaccineType}}</p>
     <p>VACCINED: {{v.vaccined}}</p>
     <p>DOSES: {{v.doses}}</p>
-    <button [disabled]="v.age < 18 || v.disease"
-    (click)="vaccine($event)">VACCINE</button>
+    <button [disabled]="v.age < 18 || v.disease" (click)="vaccine(v.id)">VACCINE</button>
 </div>
