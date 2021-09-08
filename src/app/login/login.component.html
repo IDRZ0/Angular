@@ -1,1 +1,19 @@
 <p>LOGIN</p>
+<div [formGroup]="formReactive">
+    <label for="name">NAME</label>
+    <input type="text" formControlName="name">
+    <div *ngIf="getValue('name')?.invalid && (getValue('name')?.touched || getValue('name')?.dirty)">
+        <div *ngIf="getValue('name')?.errors?.required">
+            Required
+        </div>
+        <div *ngIf="getValue('name')?.errors?.minlength">
+            Min
+        </div>
+    </div>
+    <label for="lastName">LASTNAME</label>
+    <input type="text" formControlName="lastName">
+    <div *ngIf="getValue('lastName')?.invalid && (getValue('lastName')?.touched || getValue('lastName')?.dirty)">
+        ERROR
+    </div>
+
+</div>

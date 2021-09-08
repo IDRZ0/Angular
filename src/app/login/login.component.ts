@@ -8,10 +8,21 @@ import { PublicationService } from './services/publication.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  formReactive: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.formReactive = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      lastName: ''
+    })
+  }
 
   ngOnInit(): void {
     console.log('IGNACIO DEL RIO');
+  }
+
+  getValue(value: string) {
+    return this.formReactive.get(value);
   }
 
 }
