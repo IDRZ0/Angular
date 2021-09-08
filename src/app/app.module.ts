@@ -4,26 +4,32 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { LugarComponent } from './lugar/lugar.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'lugar',
     pathMatch: 'full'
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+    path: 'jurados',
+    loadChildren: () => import('./jurados/jurados.module').then(m => m.JuradosModule)
   },
   {
-    path: 'pages',
-    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+    path: 'votacion',
+    loadChildren: () => import('./votacion/votacion.module').then(m => m.VotacionModule)
+  },
+  {
+    path: 'lugar',
+    component: LugarComponent
   },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    LugarComponent,
   ],
   imports: [
     BrowserModule,
