@@ -10,6 +10,8 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
 import { AuthService } from './services/auth.service';
 import { MatCardModule } from '@angular/material/card';
+import { RegisterComponent } from './components/register/register.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 const routes: Routes = [
   {
@@ -21,6 +23,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     MatProgressSpinnerModule,
@@ -33,7 +36,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     MatCardModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
   ],
   providers: [
     AuthService,
