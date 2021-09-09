@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { PublicationService } from './services/publication.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   templateUrl: './login.component.html',
@@ -8,21 +7,23 @@ import { PublicationService } from './services/publication.service';
 })
 export class LoginComponent implements OnInit {
 
-  formReactive: FormGroup;
+  constructor(private authService: AuthService) {
 
-  constructor(private formBuilder: FormBuilder) {
-    this.formReactive = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(3)]],
-      lastName: ''
-    })
   }
 
   ngOnInit(): void {
     console.log('IGNACIO DEL RIO');
   }
 
-  getValue(value: string) {
-    return this.formReactive.get(value);
+
+  login(form: any) {
+    this.authService.login({
+      email: form.value.email,
+      password: form.value.password,
+      returnSecureToken: true
+    }).subscribe(res => {
+      console.log('RES', res);
+    });
   }
 
 }
