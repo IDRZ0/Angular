@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.publicationService.getAll().subscribe(res => {
-      console.log(res);
+      console.log('Publications', res);
     });
   }
 

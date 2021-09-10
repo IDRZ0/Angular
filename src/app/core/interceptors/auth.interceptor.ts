@@ -18,11 +18,11 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const token = this.authService.getToken();
     if (token) {
-      //let params = new HttpParams();
-      //params.append('auth', token);
+      let params = new HttpParams();
+      params = params.append('auth', token);
       request = request.clone({
-        url: `${request.url}?auth=${token}`,
-        //params: params
+        url: `${request.url}`,
+        params
       });
     }
     return next.handle(request).pipe(
