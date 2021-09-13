@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { environment } from "../../../environments/environment";
 import { map } from "rxjs/operators";
 
 @Injectable()
@@ -21,7 +21,7 @@ export class AuthService {
     );
   }
 
-  public signUp(body: any): Observable<any> {
+  public signUp(body: any) {
     return this.http.post(`${this.url}/v1/accounts:signUp?key=${this.key}`, body);
   }
 
@@ -31,11 +31,11 @@ export class AuthService {
   }
 
   public getToken(): string | null {
-    return localStorage.getItem("token");
+    return localStorage.getItem('token');
   }
 
   public getUserId(): string | null {
-    return localStorage.getItem("userId");
+    return localStorage.getItem('userId');
   }
 
 }

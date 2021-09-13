@@ -1,15 +1,17 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
+import { HttpClient } from "@angular/common/http";
+import { environment } from "../../../../environments/environment";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class PublicationService {
 
-  url = environment.apiBaseUrl;
+  private url = environment.app.apiBaseUrl;
 
-  constructor(public http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getAll() {
-    return this.http.get(`${this.url}/publications.json`);
+  getAll(): Observable<any> {
+    return this.http.get(`${this.url}/publications.json`)
   }
+
 }
