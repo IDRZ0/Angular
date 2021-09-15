@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/core/services/auth.service';
+import { PublicationService } from '../shared/services/publication.service';
 
 @Component({
   templateUrl: './profile.component.html',
@@ -6,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private publicationService: PublicationService, private authService: AuthService) { }
+
+  publications: any[] = [];
 
   ngOnInit(): void {
+    const id = this.authService.getUserId();
+    console.log('id', id);
+    if (id) {
+      this.publicationService.getAllById(id).subscribe(res => {
+        console.log('profile', res);
+        for (var _i = 0; _i < Object.keys(res).length; _i++) {
+          var aux = JSON.parse(JSON.stringify(Object.values(res)[_i]));
+          aux.id = Object.keys(res)[_i];
+          this.publications.push(aux);
+        }
+      });
+    }
   }
 
 }

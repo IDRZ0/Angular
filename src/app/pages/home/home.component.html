@@ -13,8 +13,9 @@
 
     <app-message-sender></app-message-sender>
 
-    <ng-container *ngFor="let post of [1,2,3,4]">
-      <app-post></app-post>
+    <ng-container *ngFor="let post of publications">
+      <app-post idUser={{post.idUser}} description={{post.description}} date={{post.date}} imageUrl={{post.imageUrl}}
+        userPhotoUrl={{post.userPhotoUrl}}></app-post>
     </ng-container>
   </div>
 
