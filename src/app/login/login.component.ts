@@ -13,6 +13,9 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private matDialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
+    if (this.authService.verifyLogged()) {
+      this.router.navigate(['pages']);
+    }
   }
 
   login(form: any) {
