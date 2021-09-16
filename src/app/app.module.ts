@@ -6,23 +6,9 @@ import { RouterModule, Routes } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CoreModule } from "./core/core.module";
 import { AuthGuard } from './core/guards/auth.guard';
-
-const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
-  },
-  {
-    path: 'pages',
-    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule),
-    canActivate: [AuthGuard]
-  },
-];
+import { ThirdTestModule } from './third-test/third-test.module';
+import { BitcoinService } from './third-test/services/bitcoin.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,8 +17,11 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes),
-    CoreModule
+    ThirdTestModule,
+    HttpClientModule
+  ],
+  exports: [
+    ThirdTestModule
   ],
   bootstrap: [AppComponent]
 })
