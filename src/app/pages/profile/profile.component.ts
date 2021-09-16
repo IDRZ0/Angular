@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { PublicationService } from '../shared/services/publication.service';
 
@@ -8,7 +9,7 @@ import { PublicationService } from '../shared/services/publication.service';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private publicationService: PublicationService, private authService: AuthService) { }
+  constructor(private publicationService: PublicationService, private authService: AuthService, private matDialog: MatDialog) { }
 
   publications: any[] = [];
 

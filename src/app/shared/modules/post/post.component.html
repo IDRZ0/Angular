@@ -1,7 +1,7 @@
 <mat-card class="example-card">
   <mat-card-header>
     <div>
-      <img src="{{userPhotoUrl}}">
+      <img src="{{userPhotoUrl}}" height="50px" width="50px">
     </div>
     <mat-card-title>{{idUser}}</mat-card-title>
     <mat-card-subtitle style="color: black;">{{date}}</mat-card-subtitle>
@@ -11,8 +11,7 @@
       {{description}}
     </p>
   </mat-card-content>
-  <img mat-card-image
-    src="{{imageUrl}}">
+  <img src="{{imageUrl}}" height="100px" width="100px">
   <mat-card-actions style="display: flex; justify-content: space-around;">
     <button mat-button>
       <mat-icon>thumb_up</mat-icon>Like
