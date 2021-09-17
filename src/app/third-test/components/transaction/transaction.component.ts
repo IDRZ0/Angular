@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-transaction',
@@ -14,6 +14,8 @@ export class TransactionComponent implements OnInit {
   @Input() moneyType: string = "";
   @Input() quantity: number = 0;
   @Input() to: string = "";
+  @Input() id: string = "";
+  @Output() mine = new EventEmitter();
 
   constructor() { }
 
@@ -27,6 +29,10 @@ export class TransactionComponent implements OnInit {
     if (this.mineType === "PoS") {
       this.color = "green";
     }
+  }
+
+  onMine() {
+    this.mine.emit(this.id);
   }
 
 }

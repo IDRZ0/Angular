@@ -11,7 +11,7 @@ export class WalletComponent implements OnInit {
   @Input() eth: number = 0;
   @Input() name: string = "";
   @Input() wallet: string = "";
-
+  @Input() id: string = "";
 
   constructor() { }
 

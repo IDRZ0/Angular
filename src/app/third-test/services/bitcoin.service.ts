@@ -25,7 +25,7 @@ export class BitcoinService {
   }
 
   public deleteTransactions(id: string): Observable<any> {
-    return this.http.get(`${this.url}/transactions/${id}.json`);
+    return this.http.delete(`${this.url}/transactions/${id}.json`);
   }
 
   public getWallets(): Observable<any> {

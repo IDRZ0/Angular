@@ -1,9 +1,10 @@
+<h3>BTC: {{btc}} ETH: {{eth}}</h3>
 <h3>WALLETS</h3>
 <div *ngFor="let w of wallets">
-    <app-wallet btc={{w.btc}} eth={{w.eth}} name={{w.name}} wallet={{w.wallet}}></app-wallet>
+    <app-wallet id={{w.id}} btc={{w.btc}} eth={{w.eth}} name={{w.name}} wallet={{w.wallet}}></app-wallet>
 </div>
 <h3>TRANSACTIONS</h3>
 <div *ngFor="let t of transactions">
-    <app-transaction date={{t.date}} from={{t.from}} to={{t.to}} quantity={{t.quantity}} moneyType={{t.moneyType}}
-        mineType={{t.mineType}} miner={{t.miner}}></app-transaction>
+    <app-transaction id={{t.id}} date={{t.date}} from={{t.from}} to={{t.to}} quantity={{t.quantity}}
+        moneyType={{t.moneyType}} mineType={{t.mineType}} miner={{t.miner}} (mine)="mine($event)"></app-transaction>
 </div>
