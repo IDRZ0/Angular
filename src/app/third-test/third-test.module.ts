@@ -4,15 +4,20 @@ import { ThirdTestComponent } from './third-test.component';
 import { TransactionComponent } from './components/transaction/transaction.component';
 import { WalletComponent } from './components/wallet/wallet.component';
 import { BitcoinService } from './services/bitcoin.service';
+import { FormComponent } from './components/form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     ThirdTestComponent,
     TransactionComponent,
-    WalletComponent
+    WalletComponent,
+    FormComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ThirdTestComponent

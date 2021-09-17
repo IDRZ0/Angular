@@ -1,0 +1,11 @@
+<div style="border: 5px solid black; background-color: chartreuse;">
+    <form #form="ngForm" (ngSubmit)="onCreate(form)">
+        <input type="text" required name="from" ngModel placeholder="from"><br>
+        <input type="text" required name="mineType" ngModel placeholder="mineType"><br>
+        <input type="number" required name="miner" ngModel placeholder="miner"><br>
+        <input type="text" required name="moneyType" ngModel placeholder="moneyType"><br>
+        <input type="number" required name="quantity" ngModel placeholder="quantity"><br>
+        <input type="text" required name="to" ngModel placeholder="to"><br>
+        <button>Create</button>
+    </form>
+</div>
