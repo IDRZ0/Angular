@@ -19,7 +19,7 @@ export class TransactionComponent implements OnInit {
 
   constructor() { }
 
-  color: string = "yellow";
+  color: string = "white";
 
   ngOnInit(): void {
     this.checkColor();
@@ -28,6 +28,10 @@ export class TransactionComponent implements OnInit {
   checkColor() {
     if (this.mineType === "PoS") {
       this.color = "green";
+    } else if (this.mineType === "PoW") {
+      this.color = "yellow";
+    } else {
+
     }
   }
 

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   app: {
-    apiBaseUrl: "https://angular-course-facebook-default-rtdb.firebaseio.com"
+    apiBaseUrl: "https://bitcoin-test-a0874-default-rtdb.firebaseio.com/"
   },
   auth: {
     apiBaseUrl: "https://identitytoolkit.googleapis.com",
